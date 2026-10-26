@@ -24,3 +24,10 @@ def update_LostItem(db: Session, item_id: int, item: schemas.LostItemUpdate):
         db.refresh(db_item)
     return db_item
 
+def delete_LostItem(db: Session, item_id: int):
+    db_item = db.query(models.LostItem).filter(models.LostItem.id == item_id).first()
+    if db_item:
+        db.delete(db_item)
+        db.commit()
+    return db_item
+
