@@ -22,3 +22,11 @@ class LostItemResponse(LostItemBase):
     class Config:
         from_attributes = True
 
+class LostItemUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    location_found: Optional[str] = None
+    item_type: Optional[str] = None
+    phone_number: Optional[str] = None
+    image_url: Optional[str] = None
+    status: Optional[str] = None
